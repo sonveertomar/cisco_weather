@@ -22,6 +22,7 @@ public class OpenWeatherDataCollector {
 		ArrayList<String> resp=getWeatherInfo(lat,lng);
 		System.out.println("Status : "+resp.get(0));
 		if(resp.get(0).equals("200")) { 
+			try {
 			OpenWeatherResponse openWeatherResponse=parseResponse(resp.get(1));
 			if(openWeatherResponse.getCod().equalsIgnoreCase("200")) {
 				System.out.println(openWeatherResponse.getName());
@@ -43,7 +44,12 @@ public class OpenWeatherDataCollector {
 				responseList.add(1, "Incorrect Response From Open Weather!");
 				
 				}
-			}else {
+			}catch(Exception e) {
+				responseList.add(0, "-3");
+				responseList.add(1, "Error While Connecting to Open Weather!");
+			}
+			}
+			else {
 				responseList.add(0, "-2");
 				responseList.add(1, resp.get(1));
 			}

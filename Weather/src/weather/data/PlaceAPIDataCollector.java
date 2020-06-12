@@ -13,9 +13,9 @@ import org.codehaus.jackson.map.ObjectMapper;
 public class PlaceAPIDataCollector {
 	public ArrayList<String> getPlaceData(String place_name){
 		ArrayList<String> responseList=new ArrayList<>();
-		String resp=getDestinationLocation(place_name);
-		if(resp!=null) { 
-			Response t=parseResponse(resp);
+		ArrayList<String> resp=getDestinationLocation(place_name);
+		if(resp.get(0).equals("200")) { 
+			Response t=parseResponse(resp.get(1));
 			if(t.getFeatures().size()==0) {
 				System.out.println("No Data Found! Something went wrong");
 				responseList.add(0, "-2");
@@ -53,8 +53,9 @@ public class PlaceAPIDataCollector {
 		}
 		return responseList;
 	}
-	public String getDestinationLocation(String addess) {
+	public ArrayList<String> getDestinationLocation(String addess) {
 		StringBuilder sb = new StringBuilder();
+		ArrayList<String> responseList=new ArrayList<>();
 		String http = "https://api.mapbox.com/geocoding/v5/mapbox.places/"+addess+".json?access_token=pk.eyJ1IjoibXQyMDE4MTE4IiwiYSI6ImNrYjg1bGhsbzAweWwycnFydXo3MmM5M2cifQ.cUbcOIh2cqsOugbRfDQABA";
 		System.out.println("Invoking URL :: "+http);
 		HttpURLConnection urlConnection = null;
@@ -68,6 +69,7 @@ public class PlaceAPIDataCollector {
             urlConnection.connect();*/
 			int HttpResult = urlConnection.getResponseCode();
 			System.out.println("HttpResult  :: " + HttpResult);
+			responseList.add(0,String.valueOf(HttpResult));
 			if (HttpResult == HttpURLConnection.HTTP_OK) {
 				System.out.println("Url Connected HTTP Status :: " + HttpResult);
 				BufferedReader br = new BufferedReader(new InputStreamReader(
@@ -78,23 +80,31 @@ public class PlaceAPIDataCollector {
 				}
 				br.close();
 				System.out.println("Output From Url :: " + sb.toString());
+				responseList.add(1,sb.toString());
 			} else {
+				responseList.add(1,urlConnection.getResponseMessage());
 				System.out.println("ResponseMessage ::  " + urlConnection.getResponseMessage());
 			}
 		} catch (MalformedURLException e) {
 			System.out.println("Exception :: "+e);
+			responseList.add(0,"501");
+			responseList.add(1,e.getMessage());
 			//e.printStackTrace();  
 		} catch (IOException e) {
 			System.out.println("Exception :: "+e);
+			responseList.add(0,"501");
+			responseList.add(1,e.getMessage());
 			//e.printStackTrace();  
 		} catch (Exception e) {
 			System.out.println("Exception :: "+e);
+			responseList.add(0,"501");
+			responseList.add(1,e.getMessage());
 		} finally {
 			if (urlConnection != null) {
 				urlConnection.disconnect();
 			}
 		}
-		return sb.toString();
+		return responseList;
 	}
 	public Response parseResponse(String respStr){
 		Response destination=null;            

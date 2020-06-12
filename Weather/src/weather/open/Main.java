@@ -11,11 +11,15 @@ public class Main {
 	int temp_max;
 	int pressure;
 	int humidity;
+	int sea_level;
+	int grnd_level;
 	public Main() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Main(int temp, int feels_like, int temp_min, int temp_max, int pressure, int humidity) {
+	
+	public Main(int temp, int feels_like, int temp_min, int temp_max, int pressure, int humidity, int sea_level,
+			int grnd_level) {
 		super();
 		this.temp = temp;
 		this.feels_like = feels_like;
@@ -23,7 +27,10 @@ public class Main {
 		this.temp_max = temp_max;
 		this.pressure = pressure;
 		this.humidity = humidity;
+		this.sea_level = sea_level;
+		this.grnd_level = grnd_level;
 	}
+
 	public int getTemp() {
 		return temp;
 	}
@@ -60,6 +67,23 @@ public class Main {
 	public void setHumidity(int humidity) {
 		this.humidity = humidity;
 	}
+	
+	public int getSea_level() {
+		return sea_level;
+	}
+
+	public void setSea_level(int sea_level) {
+		this.sea_level = sea_level;
+	}
+
+	public int getGrnd_level() {
+		return grnd_level;
+	}
+
+	public void setGrnd_level(int grnd_level) {
+		this.grnd_level = grnd_level;
+	}
+
 	public String toString() {
 
 		Field[] fields = this.getClass().getDeclaredFields();
