@@ -28,19 +28,19 @@ OpenWeatherDataCollector openWeatherDataCollector=new OpenWeatherDataCollector()
 		</tr>
 		<tr>
 		<td>Temprature :</td>
-		<td><%=resp.get(2)%></td>
+		<td><%=resp.get(2)%>&#8451;</td>
 		</tr>
 		<tr>
 		<td>Temprature Min :</td>
-		<td><%=resp.get(3)%></td>
+		<td><%=resp.get(3)%>&#8451;</td>
 		</tr>
 		<tr>
 		<td>Temprature Max:</td>
-		<td><%=resp.get(4)%></td>
+		<td><%=resp.get(4)%>&#8451;</td>
 		</tr>
 		<tr>
 		<td>Temprature Feels:</td>
-		<td><%=resp.get(5)%></td>
+		<td><%=resp.get(5)%>&#8451;</td>
 		</tr>
 		<tr>
 		<td>Pressure : </td>

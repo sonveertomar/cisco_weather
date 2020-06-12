@@ -15,7 +15,7 @@
 %>
 <body>
 	<form action="" method="GET">
-		First Place: <input type="text" name="place"> <br /> <input
+		Place: <input type="text" name="place"> <br /> <input
 			type="submit" value="Submit" /> <input type="hidden" name="req_type"
 			value="1" />
 	</form>
