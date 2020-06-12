@@ -39,7 +39,7 @@
 		</tr>
 		<tr>
 			<td>Long :</td>
-			<td><a href="Weather.jsp?lat=<%=placeAPIPresponse.get(2)%>&long=<%=placeAPIPresponse.get(3)%>">Get Weather Info</a></td>
+			<td><a href="Weather.jsp?latitude=<%=placeAPIPresponse.get(2)%>&longitude=<%=placeAPIPresponse.get(3)%>">Get Weather Info</a></td>
 		</tr>
 	</table>
 	<%
@@ -59,6 +59,12 @@
 		}
 		}
 	%>
-	
+</table>
+<table><tr>
+<td> <a href="About.jsp">About</a></td>
+<td> | </td>
+<td> <a href="GeoLocation.jsp">GeoLocation</a></td>
+</tr></table>
+</center>
 </body>
 </html>

@@ -29,8 +29,8 @@ public class PlaceAPIDataCollector {
 					System.out.println("Long : "+t.getFeatures().get(0).getCenter().get(1));
 					responseList.add(0, "0");
 					responseList.add(1, t.getFeatures().get(0).getPlace_name());
-					responseList.add(2, t.getFeatures().get(0).getCenter().get(0));
-					responseList.add(3, t.getFeatures().get(0).getCenter().get(1));
+					responseList.add(2, t.getFeatures().get(0).getCenter().get(1));
+					responseList.add(3, t.getFeatures().get(0).getCenter().get(0));
 					responseList.add(4, "Data Fetched Succcesfully.");
 				}else {
 					System.out.println("Not Valid Place!");

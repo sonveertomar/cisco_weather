@@ -7,6 +7,7 @@
 <title>About</title>
 </head>
 <body>
+<table><tr><td><h3>Sonveer Tomar</h3></td></tr></table>
 <ul>
 <li> <a href="About.jsp">About</a></li>
 <li> <a href="GeoLocation.jsp">GeoLocation</a></li>
