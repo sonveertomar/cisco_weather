@@ -11,8 +11,12 @@
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry exported="true" kind="lib" path="/home/nilesh/eclipse_2/mapbox-sdk-services-5.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/nilesh/eclipse_2/jackson-all-1.9.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/nilesh/eclipse_2/jackson-core-asl-1.8.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/nilesh/eclipse_2/jackson-mapper-asl-1.8.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/nilesh/eclipse_2/json-simple-1.1.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
